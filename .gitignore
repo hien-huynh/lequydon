@@ -157,7 +157,7 @@ wp-content/mu-plugins/local-by-flywheel-live-link-helper.php
 wp-content/themes/*
 !wp-content/themes/twentytwentyfour
 !wp-content/themes/genesis
-!wp-content/themes/gravity-global
+!wp-content/themes/generatepress
 !wp-content/uploads/vecb
 wp-content/themes/core/*.html
 wp-content/themes/gravity-global/build
