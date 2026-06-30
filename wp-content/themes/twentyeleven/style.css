@@ -143,11 +143,6 @@ body {
 	margin: 0 0 0 31%;
 	width: 69%;
 }
-.page-template-showcase-php #main .widget-area {
-	float: left;
-	margin: 0 -22.15% 0 0;
-	width: 22.15%;
-}
 
 /* error404 */
 .error404 #primary {
@@ -1390,7 +1385,6 @@ h1.showcase-heading {
 
 /* Intro */
 article.intro {
-	background: #f9f9f9;
 	border-bottom: none;
 	margin: -1.855em -8.9% 1.625em;
 	padding: 0 8.9%;

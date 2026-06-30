@@ -1062,19 +1062,22 @@ add_action( 'wp_enqueue_scripts', function() {
 });
 
 add_action( 'wp_enqueue_scripts', function() {
-    // Đường dẫn đến thư mục chứa file js
-    $js_dir = get_stylesheet_directory() . '/js';
-    
-    if ( is_dir( $js_dir ) ) {
-        $js_files = glob( $js_dir . '/*.js' );
-        
-        foreach ( $js_files as $file ) {
-            $filename = basename( $file );
-            $handle = 'custom-js-' . str_replace( '.js', '', $filename );
-            
-            // Import file JS
-            // Tham số 'true' ở cuối nghĩa là nạp file vào Footer (tốt cho tốc độ tải trang)
-            wp_enqueue_script( $handle, get_stylesheet_directory_uri() . '/js/' . $filename, array(), null, false );
+    $js_dirs = array(
+        get_stylesheet_directory() . '/js',
+        get_stylesheet_directory() . '/js/assetsjs',
+    );
+
+    foreach ( $js_dirs as $js_dir ) {
+        if ( is_dir( $js_dir ) ) {
+            $js_files = glob( $js_dir . '/*.js' );
+
+            foreach ( $js_files as $file ) {
+                $relative_path = str_replace( '\\', '/', str_replace( get_stylesheet_directory() . '/', '', $file ) );
+                $filename      = basename( $file );
+                $handle        = 'custom-js-' . str_replace( array( '.js', '/' ), array( '', '-' ), $relative_path );
+
+                wp_enqueue_script( $handle, get_stylesheet_directory_uri() . '/' . $relative_path, array(), null, false );
+            }
         }
     }
 });
