@@ -355,17 +355,6 @@ if ( ! function_exists( 'generate_pingback_header' ) ) {
 	}
 }
 
-if ( ! function_exists( 'generate_add_viewport' ) ) {
-	add_action( 'wp_head', 'generate_add_viewport', 1 );
-	/**
-	 * Add viewport to wp_head.
-	 *
-	 * @since 1.1.0
-	 */
-	function generate_add_viewport() {
-		echo apply_filters( 'generate_meta_viewport', '<meta name="viewport" content="width=device-width, initial-scale=1">' );  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-	}
-}
 
 add_action( 'generate_before_header', 'generate_do_skip_to_content_link', 2 );
 /**
