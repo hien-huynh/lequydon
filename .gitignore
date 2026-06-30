@@ -157,8 +157,9 @@ wp-content/mu-plugins/local-by-flywheel-live-link-helper.php
 wp-content/themes/*
 !wp-content/themes/twentytwentyfour
 !wp-content/themes/genesis
-# !wp-content/themes/generatepress
-# !wp-content/themes/generatepress-child
+!wp-content/themes/generatepress
+!wp-content/themes/twentyeleven
+!wp-content/themes/generatepress-child
 !wp-content/themes/wordpress-helsinki-education-hub
 !wp-content/uploads/vecb
 wp-content/themes/core/*.html

@@ -1,0 +1,50 @@
+/*
+Theme Name: GeneratePress Child
+Template: generatepress
+*/
+
+/* .mod-tin-tuc {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.site-content {
+    display: flex !important;
+    flex-direction: row;
+}
+
+.site-content .content-area {
+    width:  100% !important;
+}
+
+.sidebar {
+    width: 270px !important; 
+    margin: 10px 20px 0 0;
+    text-align: justify;
+    vertical-align: top;
+}
+@media (max-width: 768px) {
+    .widget-area .widget {
+        padding: 5px;
+    }
+    .site-content {
+    flex-direction: row-reverse!important;
+    }
+
+}
+.container.grid-container {
+    padding-bottom: 4px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.sidebar .widget {
+    background-color: #1D982D;
+}
+.title-tin-tuc, .mod-tin-tuc a {
+    color: #fff;
+    text-decoration: none;
+}
+.widget-area .widget {
+    padding: 5px;
+} */
