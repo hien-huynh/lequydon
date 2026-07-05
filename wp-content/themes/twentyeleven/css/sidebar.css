@@ -1,0 +1,112 @@
+
+/* Sidebar styles targeting the actual HTML structure */
+
+.custom-sidebar-nav .sidebar-menu-wrapper { font-family: inherit; }
+.custom-sidebar-nav .sidebar-list {
+  width: full;
+  background: #2e8b3a;
+  border-radius: 4px;
+  list-style: none;
+  margin: 0;
+}
+
+.custom-sidebar-nav .sidebar-list > li.menu-item {
+  position: relative;
+}
+
+.custom-sidebar-nav .sidebar-list > li > a {
+  display: block;
+  color: #fff;
+  padding: 10px 12px;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 3px;
+  background: linear-gradient(#38a64a, #2e8b3a);
+}
+
+/* indicator for items with children */
+.custom-sidebar-nav .menu-item-has-children > a::after {
+  content: '▾';
+  float: right;
+  opacity: 0.9;
+  transform: translateY(-1px) rotate(0deg);
+  line-height: 1;
+  font-size: 24px;
+  transition: transform .18s ease;
+  
+}
+
+/* hover / active */
+.custom-sidebar-nav .sidebar-list > li > a:hover,
+.custom-sidebar-nav .sidebar-list > li.current-menu-item > a {
+  background: #1f7a31;
+  color: #fff;
+}
+
+/* rotate the indicator when the item is hovered or active */
+.custom-sidebar-nav .sidebar-list > li > a:hover::after,
+.custom-sidebar-nav .sidebar-list > li.current-menu-item > a::after,
+.custom-sidebar-nav .sidebar-list li.menu-item:hover > a::after,
+.custom-sidebar-nav .custom-sidebar-nav .menu-item-has-children:hover > a::after,
+.custom-sidebar-nav .sidebar-list li.menu-item-has-children:hover > a::after {
+  transform: translateY(-1px) rotate(-90deg);
+}
+
+/* sub-menu (flyout) */
+.custom-sidebar-nav .sidebar-list .sub-menu {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  min-width: 220px;
+  background: #dff3ff;
+  border-radius: 3px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  padding: 6px 0;
+  z-index: 40;
+  list-style: none;
+  margin: 0;
+}
+
+/* show on hover for desktops */
+.custom-sidebar-nav .sidebar-list li.menu-item:hover > ul.sub-menu {
+  display: block;
+}
+
+.custom-sidebar-nav .sub-menu li.menu-item { margin: 0; }
+.custom-sidebar-nav .sub-menu li.menu-item > a {
+  display: block;
+  padding: 8px 14px;
+  color: #111;
+  background: transparent;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* nested sub-menu (third level) */
+.custom-sidebar-nav .sub-menu .sub-menu {
+  left: 100%;
+  top: 0;
+  background: #fff8f8;
+  border-left: 3px solid #e85a4f;
+}
+
+/* small visual tweaks */
+.custom-sidebar-nav a:focus { outline: none; box-shadow: 0 0 0 3px rgba(34,150,80,0.12); }
+.custom-sidebar-nav .sub-menu a:hover { background: rgba(0,0,0,0.04); }
+
+/* responsive: convert hover to toggle on small screens */
+@media (max-width: 800px) {
+  .custom-sidebar-nav .sidebar-list { width: 100%; }
+  .custom-sidebar-nav .sidebar-list .sub-menu { position: static; display: none; box-shadow: none; padding-left: 12px; }
+  .custom-sidebar-nav .sidebar-list li.menu-item.open > ul.sub-menu { display: block; }
+  .custom-sidebar-nav .menu-item-has-children > a::after { content: '▸'; }
+  .custom-sidebar-nav .sidebar-list li.menu-item.open > a::after { transform: rotate(-90deg); }
+}
+#primary:has(.custom-sidebar-nav) {
+  display: flex;
+}
+#primary:has(.custom-sidebar-nav) #content{
+    width: 75%;
+    margin-left: auto;
+}

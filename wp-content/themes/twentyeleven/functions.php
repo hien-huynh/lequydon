@@ -1081,3 +1081,20 @@ add_action( 'wp_enqueue_scripts', function() {
         }
     }
 });
+foreach (glob(get_template_directory() . '/post-type/*.php') as $filename) {
+    require_once $filename;
+}
+// Tự động nạp file index.php trong từng thư mục con của /modules/
+foreach (glob(get_template_directory() . '/modules/*/index.php') as $filename) {
+    require_once $filename;
+}
+
+
+register_sidebar( array(
+    'name'          => 'Sidebar chính',
+    'id'            => 'main-sidebar',
+    'before_widget' => '<div class="widget">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h3 class="widget-title">',
+    'after_title'   => '</h3>',
+) );

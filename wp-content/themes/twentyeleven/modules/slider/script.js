@@ -23,12 +23,3 @@ jQuery(function ($) {
         showTab(nextIndex);
     }, intervalTime);
 });
-document.addEventListener('click', function(e){
-  var toggler = e.target.closest('.sublink.hassub');
-  if(!toggler) return;
-  var li = toggler.parentElement;
-  if(window.innerWidth <= 800){
-    e.preventDefault();
-    li.classList.toggle('open');
-  }
-});

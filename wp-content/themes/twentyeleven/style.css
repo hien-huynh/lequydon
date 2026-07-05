@@ -135,7 +135,7 @@ body {
 }
 .page-template-showcase-php #content,
 .left-sidebar.page-template-showcase-php #content {
-	margin: 0 10px;
+	margin: 0;
 	width: auto;
 }
 .page-template-showcase-php section.recent-posts {
@@ -188,23 +188,6 @@ body {
 	width: 250px;
 }
 
-/* One column */
-.one-column #page {
-	max-width: 690px;
-}
-.one-column #content {
-	margin: 0 10px;
-	width: auto;
-}
-.one-column #nav-below {
-	border-bottom: 1px solid #ddd;
-	margin-bottom: 1.625em;
-}
-.one-column #secondary {
-	float: none;
-	margin: 0 10px;
-	width: auto;
-}
 /* Simplify the showcase template */
 .one-column .page-template-showcase-php section.recent-posts {
 	float: none;
@@ -565,7 +548,7 @@ a.assistive-text:focus,
 -------------------------------------------------------------- */
 
 #access {
-	background: linear-gradient(to bottom, rgba(22,148,39,1) 0%, rgba(117,209,125,1) 100%);
+	background: #2d7c35;
 	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 	-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
@@ -591,6 +574,7 @@ a.assistive-text:focus,
 	line-height: 3.333em;
 	padding: 0 1.2125em;
 	text-decoration: none;
+	font-weight: 600;
 }
 #access ul ul {
 	-moz-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
@@ -642,6 +626,7 @@ a.assistive-text:focus,
 #access .current_page_item > a,
 #access .current_page_ancestor > a {
 	font-weight: bold;
+	color: yellow;
 }
 
 /* Search Form */
@@ -772,10 +757,7 @@ a.assistive-text:focus,
 .single-author .entry-meta .by-author {
 	display: none;
 }
-.entry-content,
-.entry-summary {
-	padding: 1.625em 0 0;
-}
+
 .entry-content .more-link {
 	white-space: nowrap;
 }
@@ -2549,4 +2531,7 @@ h2 {
 }
 .mod-tin-tuc>div:has(.mod-tin-tuc-item) {
     gap: 4px;
+}
+.sub-menu {
+	background: #fff;
 }

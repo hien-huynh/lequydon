@@ -1,0 +1,13 @@
+.list-v2 {
+    width: 100%;
+}
+.van-ban-list li.lithbao {
+    display: flex;
+}
+.van-ban-list .sidebar__link {
+    width: calc(100% - 45px);
+}
+.sidebar__download {
+    color: red;
+    text-decoration: underline;
+}

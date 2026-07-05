@@ -15,6 +15,16 @@
 get_header(); ?>
 
 		<div id="primary">
+			<div class="custom-sidebar-nav">
+				<?php
+				wp_nav_menu( array(
+					'menu'            => 'sidebar', // Tên menu bạn đặt
+					'container'       => 'div',
+					'container_class' => 'sidebar-menu-wrapper', // Class để bạn CSS
+					'menu_class'      => 'sidebar-list', // Class cho thẻ <ul>
+				) );
+				?>
+			</div>
 			<div id="content" role="main">
 
 				<?php
