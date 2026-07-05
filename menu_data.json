@@ -1,0 +1,921 @@
+{
+    "format": "import-export-menu",
+    "schema_version": "1.1",
+    "generator": "Import Export Menu",
+    "plugin_version": "3.0.0",
+    "exported_at": "2026-07-05T15:41:03+00:00",
+    "site_url": "http://lequydon.local",
+    "menus": [
+        {
+            "name": "Home",
+            "slug": "home",
+            "locations": [
+                "primary"
+            ],
+            "auto_add_pages": false,
+            "items": [
+                {
+                    "id": 1,
+                    "parent": 0,
+                    "menu_order": 1,
+                    "title": "Trang chủ",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 2,
+                    "parent": 0,
+                    "menu_order": 2,
+                    "title": "Giới thiệu",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 3,
+                    "parent": 2,
+                    "menu_order": 3,
+                    "title": "Tóm tắt thành tích",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 4,
+                    "parent": 2,
+                    "menu_order": 4,
+                    "title": "Lịch sử phát triển",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 5,
+                    "parent": 0,
+                    "menu_order": 5,
+                    "title": "Truyền thống",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 6,
+                    "parent": 5,
+                    "menu_order": 6,
+                    "title": "Tập san",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 7,
+                    "parent": 5,
+                    "menu_order": 7,
+                    "title": "Các thế hệ giáo viên",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 8,
+                    "parent": 5,
+                    "menu_order": 8,
+                    "title": "Các thế hệ học sinh",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 9,
+                    "parent": 0,
+                    "menu_order": 9,
+                    "title": "Tuyển sinh",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 10,
+                    "parent": 0,
+                    "menu_order": 10,
+                    "title": "Nội quy",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 11,
+                    "parent": 10,
+                    "menu_order": 11,
+                    "title": "Nội quy cơ quan",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 12,
+                    "parent": 10,
+                    "menu_order": 12,
+                    "title": "Nội quy học sinh",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 13,
+                    "parent": 0,
+                    "menu_order": 13,
+                    "title": "Học bổng",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 14,
+                    "parent": 0,
+                    "menu_order": 14,
+                    "title": "Câu lạc bộ",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 15,
+                    "parent": 14,
+                    "menu_order": 15,
+                    "title": "Câu lạc bộ Toán học",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 16,
+                    "parent": 14,
+                    "menu_order": 16,
+                    "title": "Câu lạc bộ Vật lý",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 17,
+                    "parent": 14,
+                    "menu_order": 17,
+                    "title": "Câu lạc bộ Hóa học",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 18,
+                    "parent": 14,
+                    "menu_order": 18,
+                    "title": "Câu lạc bộ Sinh học",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 19,
+                    "parent": 14,
+                    "menu_order": 19,
+                    "title": "Câu lạc bộ Tiếng Anh",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 20,
+                    "parent": 14,
+                    "menu_order": 20,
+                    "title": "Câu lạc bộ Văn học",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 21,
+                    "parent": 14,
+                    "menu_order": 21,
+                    "title": "Câu lạc bộ Kỹ năng",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 22,
+                    "parent": 0,
+                    "menu_order": 22,
+                    "title": "Tra cứu điểm",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 23,
+                    "parent": 0,
+                    "menu_order": 23,
+                    "title": "Tài Nguyên",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 24,
+                    "parent": 23,
+                    "menu_order": 24,
+                    "title": "Giới thiệu sách",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 25,
+                    "parent": 23,
+                    "menu_order": 25,
+                    "title": "Biểu mẫu",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 26,
+                    "parent": 23,
+                    "menu_order": 26,
+                    "title": "Đề Cương",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 27,
+                    "parent": 23,
+                    "menu_order": 27,
+                    "title": "Đề, Đáp án",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 28,
+                    "parent": 27,
+                    "menu_order": 28,
+                    "title": "Thi THPT QG",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 29,
+                    "parent": 27,
+                    "menu_order": 29,
+                    "title": "HSG QG",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 30,
+                    "parent": 27,
+                    "menu_order": 30,
+                    "title": "Môn Toán",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 31,
+                    "parent": 27,
+                    "menu_order": 31,
+                    "title": "Môn Lý",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 32,
+                    "parent": 27,
+                    "menu_order": 32,
+                    "title": "Môn Hóa",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 33,
+                    "parent": 27,
+                    "menu_order": 33,
+                    "title": "Môn Sinh",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 34,
+                    "parent": 27,
+                    "menu_order": 34,
+                    "title": "Môn Tin",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 35,
+                    "parent": 27,
+                    "menu_order": 35,
+                    "title": "Môn Ngữ Văn",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 36,
+                    "parent": 27,
+                    "menu_order": 36,
+                    "title": "Môn Lịch sử",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 37,
+                    "parent": 27,
+                    "menu_order": 37,
+                    "title": "Môn Địa lý",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 38,
+                    "parent": 27,
+                    "menu_order": 38,
+                    "title": "Môn Tiếng Anh",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 39,
+                    "parent": 27,
+                    "menu_order": 39,
+                    "title": "Môn Công nghệ",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 40,
+                    "parent": 27,
+                    "menu_order": 40,
+                    "title": "Môn GDQP - AN",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 41,
+                    "parent": 27,
+                    "menu_order": 41,
+                    "title": "Môn GDCD",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 42,
+                    "parent": 23,
+                    "menu_order": 42,
+                    "title": "Tài liệu",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 43,
+                    "parent": 42,
+                    "menu_order": 43,
+                    "title": "Môn Công nghệ",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 44,
+                    "parent": 42,
+                    "menu_order": 44,
+                    "title": "Môn Toán",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 45,
+                    "parent": 42,
+                    "menu_order": 45,
+                    "title": "Môn Vật lý",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 46,
+                    "parent": 42,
+                    "menu_order": 46,
+                    "title": "Môn Hóa học",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 47,
+                    "parent": 42,
+                    "menu_order": 47,
+                    "title": "Môn Sinh học",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 48,
+                    "parent": 42,
+                    "menu_order": 48,
+                    "title": "Môn Tin học",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 49,
+                    "parent": 42,
+                    "menu_order": 49,
+                    "title": "Môn Ngữ Văn",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 50,
+                    "parent": 42,
+                    "menu_order": 50,
+                    "title": "Môn Lịch sử",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 51,
+                    "parent": 42,
+                    "menu_order": 51,
+                    "title": "Môn Địa lý",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 52,
+                    "parent": 42,
+                    "menu_order": 52,
+                    "title": "Môn Tiếng Anh",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                },
+                {
+                    "id": 53,
+                    "parent": 42,
+                    "menu_order": 53,
+                    "title": "Môn GDCD",
+                    "url": "#",
+                    "target": "",
+                    "attr_title": "",
+                    "description": "",
+                    "xfn": "",
+                    "classes": [],
+                    "visibility": "everyone",
+                    "reference": {
+                        "type": "custom",
+                        "object": "custom"
+                    }
+                }
+            ]
+        }
+    ]
+}

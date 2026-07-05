@@ -153,6 +153,9 @@ wp-content/mu-plugins/local-by-flywheel-live-link-helper.php
 # Ignore everything in the "plugins" directory, except the plugins you
 #wp-content/plugins/*
 
+!parse_menu.py
+!menu.html
+!menu_data.json
 # Ignore everything in the "themes" directory, except the themes you
 wp-content/themes/*
 !wp-content/themes/twentyeleven
