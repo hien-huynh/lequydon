@@ -1,0 +1,1103 @@
+# Copyright (C) 2026 Yuky Hendiawan
+# This file is distributed under the GPL-2.0+.
+msgid ""
+msgstr ""
+"Project-Id-Version: Import Export Menu 3.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/import-export-menu\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-06-07T00:30:48+07:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: import-export-menu\n"
+
+#. Plugin Name of the plugin
+#: import-export-menu.php
+#: includes/Admin/Controller.php:46
+#: includes/Admin/Controller.php:47
+msgid "Import Export Menu"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: import-export-menu.php
+msgid "https://wordpress.org/plugins/import-export-menu/"
+msgstr ""
+
+#. Description of the plugin
+#: import-export-menu.php
+msgid "Import, export, and manage WordPress navigation menus. Safely migrate menu structures between sites with hierarchy, locations, and item settings intact."
+msgstr ""
+
+#. Author of the plugin
+#: import-export-menu.php
+msgid "Yuky Hendiawan"
+msgstr ""
+
+#. Author URI of the plugin
+#: import-export-menu.php
+msgid "https://yukyhendiawan.com/"
+msgstr ""
+
+#: admin/partials/export-panel.php:17
+msgid "Export menus"
+msgstr ""
+
+#: admin/partials/export-panel.php:19
+msgid "Select the menus to export. The download is a portable JSON file you can import on another site."
+msgstr ""
+
+#: admin/partials/export-panel.php:28
+msgid "No navigation menus found yet. Create one under Appearance → Menus, then come back to export it."
+msgstr ""
+
+#: admin/partials/export-panel.php:39
+msgid "Menus to export"
+msgstr ""
+
+#. translators: %d: number of items in the menu.
+#: admin/partials/export-panel.php:57
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/partials/export-panel.php:69
+msgid "Download export"
+msgstr ""
+
+#: admin/partials/import-panel.php:20
+#: admin/partials/import-report.php:21
+#: admin/partials/menus-panel.php:21
+#: admin/partials/menus-panel.php:28
+msgid "Dismiss this notice"
+msgstr ""
+
+#. translators: %d: number of menus saved in the backup.
+#: admin/partials/import-panel.php:44
+msgid "A backup of %d menu was saved before your last import."
+msgid_plural "A backup of %d menus was saved before your last import."
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/partials/import-panel.php:62
+msgid "Undo the last import? This restores your menus to the saved backup."
+msgstr ""
+
+#: admin/partials/import-panel.php:63
+msgid "Undo last import?"
+msgstr ""
+
+#: admin/partials/import-panel.php:64
+msgid "Undo import"
+msgstr ""
+
+#: admin/partials/import-panel.php:65
+#: admin/partials/menus-panel.php:176
+#: admin/partials/options-page.php:156
+#: admin/partials/options-page.php:284
+msgid "Cancel"
+msgstr ""
+
+#: admin/partials/import-panel.php:69
+msgid "Undo last import"
+msgstr ""
+
+#: admin/partials/import-panel.php:78
+msgid "Import a menu"
+msgstr ""
+
+#: admin/partials/import-panel.php:80
+msgid "Upload an export file, choose how to import, then import."
+msgstr ""
+
+#: admin/partials/import-panel.php:95
+msgid "Export file (.json)"
+msgstr ""
+
+#: admin/partials/import-panel.php:104
+msgid "When a menu of the same name exists"
+msgstr ""
+
+#: admin/partials/import-panel.php:108
+msgid "Create a new menu"
+msgstr ""
+
+#: admin/partials/import-panel.php:109
+msgid "Replace it"
+msgstr ""
+
+#: admin/partials/import-panel.php:110
+msgid "Merge into it"
+msgstr ""
+
+#: admin/partials/import-panel.php:117
+msgid "When a linked item cannot be found"
+msgstr ""
+
+#: admin/partials/import-panel.php:121
+msgid "Keep it as a custom link"
+msgstr ""
+
+#: admin/partials/import-panel.php:122
+msgid "Skip it"
+msgstr ""
+
+#: admin/partials/import-panel.php:130
+msgid "Assign the imported menu to a theme location"
+msgstr ""
+
+#: admin/partials/import-panel.php:134
+msgid "— Don’t assign —"
+msgstr ""
+
+#: admin/partials/import-panel.php:139
+msgid "If another menu already uses that location, it will be replaced."
+msgstr ""
+
+#: admin/partials/import-panel.php:145
+#: includes/Modules/Import/ImportModule.php:68
+msgid "Import"
+msgstr ""
+
+#: admin/partials/import-report.php:16
+msgid "created"
+msgstr ""
+
+#: admin/partials/import-report.php:17
+msgid "replaced"
+msgstr ""
+
+#: admin/partials/import-report.php:18
+msgid "merged"
+msgstr ""
+
+#: admin/partials/import-report.php:25
+msgid "Import complete."
+msgstr ""
+
+#: admin/partials/import-report.php:29
+msgid "No menus were found in the file."
+msgstr ""
+
+#. translators: 1: items added, 2: items remapped, 3: items kept as links, 4: items skipped.
+#: admin/partials/import-report.php:45
+msgid "%1$d added · %2$d remapped · %3$d as links · %4$d skipped"
+msgstr ""
+
+#. translators: 1: menu name, 2: theme location label.
+#: admin/partials/import-report.php:69
+msgid "Assigned “%1$s” to the “%2$s” location."
+msgstr ""
+
+#. translators: %s: name of the menu removed from the location.
+#: admin/partials/import-report.php:79
+msgid "It replaced “%s” there."
+msgstr ""
+
+#. translators: %s: theme location label.
+#: admin/partials/import-report.php:88
+msgid "Could not assign the “%s” location — it is not registered by the active theme."
+msgstr ""
+
+#: admin/partials/menu-item-visibility-field.php:19
+msgid "Visibility"
+msgstr ""
+
+#: admin/partials/menus-panel.php:39
+msgid "Your menus"
+msgstr ""
+
+#: admin/partials/menus-panel.php:41
+msgid "Every navigation menu on your site. Duplicate a menu to experiment safely — the copy keeps its items, structure, and visibility rules."
+msgstr ""
+
+#: admin/partials/menus-panel.php:50
+msgid "No navigation menus yet. Create one under Appearance → Menus, then manage it from here."
+msgstr ""
+
+#: admin/partials/menus-panel.php:56
+msgid "List of navigation menus"
+msgstr ""
+
+#: admin/partials/menus-panel.php:59
+msgid "ID"
+msgstr ""
+
+#: admin/partials/menus-panel.php:60
+msgid "Menu"
+msgstr ""
+
+#: admin/partials/menus-panel.php:61
+msgid "Items"
+msgstr ""
+
+#: admin/partials/menus-panel.php:62
+msgid "Locations"
+msgstr ""
+
+#: admin/partials/menus-panel.php:63
+msgid "Last modified"
+msgstr ""
+
+#: admin/partials/menus-panel.php:64
+msgid "Actions"
+msgstr ""
+
+#: admin/partials/menus-panel.php:83
+msgid "Not assigned"
+msgstr ""
+
+#: admin/partials/menus-panel.php:96
+msgid "No items"
+msgstr ""
+
+#. translators: %s: menu name.
+#: admin/partials/menus-panel.php:116
+msgid "Duplicate %s"
+msgstr ""
+
+#: admin/partials/menus-panel.php:124
+msgid "Duplicate"
+msgstr ""
+
+#. translators: %s: menu name.
+#: admin/partials/menus-panel.php:135
+msgid "Edit %s"
+msgstr ""
+
+#: admin/partials/menus-panel.php:143
+msgid "Edit"
+msgstr ""
+
+#. translators: %s: menu name.
+#: admin/partials/menus-panel.php:157
+msgid "Delete %s"
+msgstr ""
+
+#. translators: %s: menu name.
+#: admin/partials/menus-panel.php:168
+msgid "Delete the “%s” menu? This permanently removes the menu and all its items, and cannot be undone."
+msgstr ""
+
+#: admin/partials/menus-panel.php:174
+msgid "Delete menu?"
+msgstr ""
+
+#: admin/partials/menus-panel.php:175
+msgid "Delete menu"
+msgstr ""
+
+#: admin/partials/menus-panel.php:181
+msgid "Delete"
+msgstr ""
+
+#: admin/partials/options-page.php:51
+#: admin/partials/options-page.php:145
+#: includes/Options/Framework.php:301
+#: includes/Options/Framework.php:302
+#: includes/Options/PageRenderer.php:385
+msgid "Settings"
+msgstr ""
+
+#: admin/partials/options-page.php:58
+msgid "Plugin groups"
+msgstr ""
+
+#: admin/partials/options-page.php:97
+msgid "Get Premium"
+msgstr ""
+
+#: admin/partials/options-page.php:98
+msgid "Unlock all advanced features"
+msgstr ""
+
+#: admin/partials/options-page.php:99
+msgid "Upgrade Now"
+msgstr ""
+
+#: admin/partials/options-page.php:153
+#: admin/partials/options-page.php:281
+msgid "Reset all settings to their defaults? This cannot be undone."
+msgstr ""
+
+#: admin/partials/options-page.php:154
+#: admin/partials/options-page.php:282
+msgid "Reset settings?"
+msgstr ""
+
+#: admin/partials/options-page.php:155
+#: admin/partials/options-page.php:159
+#: admin/partials/options-page.php:283
+#: admin/partials/options-page.php:287
+msgid "Reset Defaults"
+msgstr ""
+
+#: admin/partials/options-page.php:163
+#: admin/partials/options-page.php:291
+msgid "Save Changes"
+msgstr ""
+
+#: admin/partials/options-page.php:172
+msgid "Settings sections"
+msgstr ""
+
+#: admin/partials/options-page.php:210
+#: admin/partials/options-page.php:240
+msgid "Nothing has been registered for this view yet."
+msgstr ""
+
+#: includes/Modules/Export/ExportModule.php:78
+msgid "Export"
+msgstr ""
+
+#: includes/Modules/Export/ExportModule.php:99
+msgid "You are not allowed to export menus."
+msgstr ""
+
+#: includes/Modules/Export/ExportModule.php:112
+msgid "Could not encode the menu export."
+msgstr ""
+
+#: includes/Modules/Import/ImportModule.php:94
+msgid "You are not allowed to import menus."
+msgstr ""
+
+#: includes/Modules/Import/ImportModule.php:125
+msgid "You are not allowed to undo an import."
+msgstr ""
+
+#: includes/Modules/Menus/MenusModule.php:82
+msgid "Menus"
+msgstr ""
+
+#: includes/Modules/Menus/MenusModule.php:106
+msgid "You are not allowed to duplicate menus."
+msgstr ""
+
+#. translators: %s: name of the newly created copy.
+#: includes/Modules/Menus/MenusModule.php:120
+msgid "Menu duplicated as “%s”."
+msgstr ""
+
+#: includes/Modules/Menus/MenusModule.php:129
+msgid "Could not duplicate that menu."
+msgstr ""
+
+#: includes/Modules/Menus/MenusModule.php:142
+msgid "You are not allowed to delete menus."
+msgstr ""
+
+#. translators: %s: name of the deleted menu.
+#: includes/Modules/Menus/MenusModule.php:157
+msgid "Menu “%s” deleted."
+msgstr ""
+
+#: includes/Modules/Menus/MenusModule.php:166
+msgid "That menu no longer exists."
+msgstr ""
+
+#: includes/Modules/Support/ImportValidator.php:65
+msgid "Choose an export file first."
+msgstr ""
+
+#: includes/Modules/Support/ImportValidator.php:67
+msgid "The file could not be read. Make sure it is a .json export from this plugin."
+msgstr ""
+
+#: includes/Modules/Support/ImportValidator.php:69
+msgid "This file was not produced by Import Export Menu."
+msgstr ""
+
+#: includes/Modules/Support/ImportValidator.php:71
+msgid "This export was made with an incompatible version and cannot be imported."
+msgstr ""
+
+#: includes/Modules/Support/ImportValidator.php:73
+msgid "The export does not contain any menus."
+msgstr ""
+
+#: includes/Modules/Support/ImportValidator.php:76
+msgid "The file is not a valid menu export. Upload a JSON file exported by this plugin."
+msgstr ""
+
+#. translators: %s: original menu name.
+#: includes/Modules/Support/MenuDuplicator.php:81
+msgctxt "duplicated menu name"
+msgid "%s (copy)"
+msgstr ""
+
+#: includes/Modules/Support/MenuVisibility.php:114
+msgid "Everyone"
+msgstr ""
+
+#: includes/Modules/Support/MenuVisibility.php:115
+msgid "Logged-in users only"
+msgstr ""
+
+#: includes/Modules/Support/MenuVisibility.php:116
+msgid "Logged-out visitors only"
+msgstr ""
+
+#: includes/Options/Fields/ImageField.php:50
+msgid "Select Image"
+msgstr ""
+
+#: includes/Options/Fields/ImageField.php:51
+msgid "Use this image"
+msgstr ""
+
+#: includes/Options/Fields/ImageField.php:75
+msgid "Click to upload or drag and drop"
+msgstr ""
+
+#: includes/Options/Fields/ImageField.php:77
+msgid "PNG, JPG or SVG up to 5 MB"
+msgstr ""
+
+#: includes/Options/Fields/ImageField.php:85
+msgid "Replace Image"
+msgstr ""
+
+#: includes/Options/Fields/ImageField.php:86
+msgid "Choose Image"
+msgstr ""
+
+#: includes/Options/Fields/ImageField.php:94
+#: includes/Options/Fields/MediaField.php:98
+msgid "Remove"
+msgstr ""
+
+#: includes/Options/Fields/MediaField.php:59
+msgid "No file chosen"
+msgstr ""
+
+#: includes/Options/Fields/MediaField.php:60
+msgid "Select File"
+msgstr ""
+
+#: includes/Options/Fields/MediaField.php:61
+msgid "Use this file"
+msgstr ""
+
+#: includes/Options/Fields/MediaField.php:80
+msgid "Choose File"
+msgstr ""
+
+#: includes/Options/Fields/RepeaterField.php:97
+msgid "Row"
+msgstr ""
+
+#: includes/Options/Fields/RepeaterField.php:98
+msgid "Add row"
+msgstr ""
+
+#: includes/Options/Fields/RepeaterField.php:179
+msgid "Drag to reorder"
+msgstr ""
+
+#: includes/Options/Fields/RepeaterField.php:189
+msgid "Remove row"
+msgstr ""
+
+#: includes/Options/Fields/SpacingField.php:94
+msgid "Unit"
+msgstr ""
+
+#: includes/Options/Fields/SpacingField.php:114
+msgid "Link sides"
+msgstr ""
+
+#: includes/Options/Fields/SpacingField.php:174
+msgid "Top"
+msgstr ""
+
+#: includes/Options/Fields/SpacingField.php:176
+msgid "Right"
+msgstr ""
+
+#: includes/Options/Fields/SpacingField.php:178
+msgid "Bottom"
+msgstr ""
+
+#: includes/Options/Fields/SpacingField.php:180
+msgid "Left"
+msgstr ""
+
+#: includes/Options/Fields/ToggleField.php:44
+msgid "On"
+msgstr ""
+
+#: includes/Options/Fields/ToggleField.php:45
+msgid "Off"
+msgstr ""
+
+#: includes/Options/Fields/TypographyField.php:89
+msgid "Family"
+msgstr ""
+
+#: includes/Options/Fields/TypographyField.php:100
+msgid "Weight"
+msgstr ""
+
+#: includes/Options/Fields/TypographyField.php:111
+msgid "Size"
+msgstr ""
+
+#: includes/Options/Fields/TypographyField.php:131
+msgid "Line height"
+msgstr ""
+
+#: includes/Options/Framework.php:317
+msgid "You do not have permission to reset these settings."
+msgstr ""
+
+#. translators: 1: control label, 2: navigation group label.
+#: includes/Options/PageRenderer.php:211
+msgid "%1$s (under %2$s)"
+msgstr ""
+
+#. translators: %s: comma-separated list of control labels.
+#: includes/Options/PageRenderer.php:221
+msgid "This page only appears while %s are set to show it. Update them and save your changes to keep access from the menu."
+msgstr ""
+
+#. translators: %s: control label.
+#: includes/Options/PageRenderer.php:223
+msgid "This page only appears while %s is set to show it. Update it and save your changes to keep access from the menu."
+msgstr ""
+
+#: includes/Options/PageRenderer.php:228
+msgid "This page depends on another setting"
+msgstr ""
+
+#: includes/Options/PageRenderer.php:337
+msgid "Pro"
+msgstr ""
+
+#: includes/Options/PageRenderer.php:386
+msgid "No settings have been registered yet."
+msgstr ""
+
+#: includes/Options/PageRenderer.php:390
+msgid "Hook into <code>import_export_menu_options_register</code> to add tabs, sections, and fields."
+msgstr ""
+
+#: includes/Options/Settings.php:92
+msgid "Welcome to our newly optimized WordPress site!"
+msgstr ""
+
+#: includes/Options/Settings.php:233
+msgid "General Settings"
+msgstr ""
+
+#: includes/Options/Settings.php:234
+msgid "Appearance"
+msgstr ""
+
+#: includes/Options/Settings.php:235
+msgid "Performance"
+msgstr ""
+
+#: includes/Options/Settings.php:236
+msgid "Security"
+msgstr ""
+
+#: includes/Options/Settings.php:237
+msgid "Database"
+msgstr ""
+
+#: includes/Options/Settings.php:238
+msgid "Integrations"
+msgstr ""
+
+#: includes/Options/Settings.php:241
+msgid "Experimental Lab"
+msgstr ""
+
+#: includes/Options/Settings.php:260
+msgid "Basic Configuration"
+msgstr ""
+
+#: includes/Options/Settings.php:261
+msgid "Advanced Options"
+msgstr ""
+
+#: includes/Options/Settings.php:262
+msgid "API Keys"
+msgstr ""
+
+#: includes/Options/Settings.php:263
+msgid "Custom CSS/JS"
+msgstr ""
+
+#: includes/Options/Settings.php:278
+msgid "Text Inputs & Configuration"
+msgstr ""
+
+#: includes/Options/Settings.php:279
+msgid "Demo text inputs"
+msgstr ""
+
+#: includes/Options/Settings.php:289
+msgid "Plugin License Key"
+msgstr ""
+
+#: includes/Options/Settings.php:290
+msgid "Required for automatic updates and support."
+msgstr ""
+
+#: includes/Options/Settings.php:291
+msgid "Enter your license key"
+msgstr ""
+
+#: includes/Options/Settings.php:303
+msgid "Admin Email Address"
+msgstr ""
+
+#: includes/Options/Settings.php:304
+msgid "Where notifications will be sent."
+msgstr ""
+
+#: includes/Options/Settings.php:314
+msgid "Custom Welcome Message"
+msgstr ""
+
+#: includes/Options/Settings.php:323
+msgid "Feature Toggles"
+msgstr ""
+
+#: includes/Options/Settings.php:332
+msgid "Enable Debug Mode"
+msgstr ""
+
+#: includes/Options/Settings.php:333
+msgid "Logs errors to debug.log for troubleshooting."
+msgstr ""
+
+#: includes/Options/Settings.php:343
+msgid "Auto-Minify CSS/JS"
+msgstr ""
+
+#: includes/Options/Settings.php:344
+msgid "Automatically compress assets to improve load times."
+msgstr ""
+
+#: includes/Options/Settings.php:354
+msgid "Enable Lazy Loading"
+msgstr ""
+
+#: includes/Options/Settings.php:355
+msgid "Defer loading of images and iframes in viewport."
+msgstr ""
+
+#: includes/Options/Settings.php:363
+msgid "Adjustment Controls"
+msgstr ""
+
+#: includes/Options/Settings.php:372
+msgid "Cache Expiration Time"
+msgstr ""
+
+#: includes/Options/Settings.php:376
+msgid " Hours"
+msgstr ""
+
+#: includes/Options/Settings.php:388
+msgid "Image Compression Level"
+msgstr ""
+
+#: includes/Options/Settings.php:393
+msgid "Lossless"
+msgstr ""
+
+#: includes/Options/Settings.php:394
+msgid "Aggressive"
+msgstr ""
+
+#: includes/Options/Settings.php:404
+msgid "Maximum Upload Size (MB)"
+msgstr ""
+
+#: includes/Options/Settings.php:418
+msgid "Selection Options"
+msgstr ""
+
+#: includes/Options/Settings.php:427
+msgid "Default User Role for Sync"
+msgstr ""
+
+#: includes/Options/Settings.php:430
+msgid "Subscriber"
+msgstr ""
+
+#: includes/Options/Settings.php:431
+msgid "Contributor"
+msgstr ""
+
+#: includes/Options/Settings.php:432
+msgid "Author"
+msgstr ""
+
+#: includes/Options/Settings.php:442
+msgid "Backup Frequency"
+msgstr ""
+
+#: includes/Options/Settings.php:445
+msgid "Daily"
+msgstr ""
+
+#: includes/Options/Settings.php:446
+msgid "Weekly"
+msgstr ""
+
+#: includes/Options/Settings.php:447
+msgid "Monthly"
+msgstr ""
+
+#: includes/Options/Settings.php:455
+msgid "Feature Selection"
+msgstr ""
+
+#: includes/Options/Settings.php:463
+msgid "Enabled Features"
+msgstr ""
+
+#: includes/Options/Settings.php:466
+msgid "Enable Email Notifications"
+msgstr ""
+
+#: includes/Options/Settings.php:467
+msgid "Auto-Update Plugin"
+msgstr ""
+
+#: includes/Options/Settings.php:468
+msgid "Enable Analytics Tracking"
+msgstr ""
+
+#: includes/Options/Settings.php:469
+msgid "Enable Error Reporting"
+msgstr ""
+
+#: includes/Options/Settings.php:477
+msgid "Dropdown Selections"
+msgstr ""
+
+#: includes/Options/Settings.php:486
+msgid "Timezone Settings"
+msgstr ""
+
+#: includes/Options/Settings.php:489
+msgid "UTC"
+msgstr ""
+
+#: includes/Options/Settings.php:490
+msgid "UTC +07:00 — Bangkok, Jakarta"
+msgstr ""
+
+#: includes/Options/Settings.php:491
+msgid "UTC +09:00 — Tokyo, Seoul"
+msgstr ""
+
+#: includes/Options/Settings.php:492
+msgid "UTC +00:00 — London"
+msgstr ""
+
+#: includes/Options/Settings.php:502
+msgid "Date Format"
+msgstr ""
+
+#: includes/Options/Settings.php:517
+msgid "Language"
+msgstr ""
+
+#: includes/Options/Settings.php:530
+msgid "Advanced Input Types"
+msgstr ""
+
+#: includes/Options/Settings.php:539
+msgid "Maximum Posts Per Page"
+msgstr ""
+
+#: includes/Options/Settings.php:540
+msgid "Number of posts to display on archive pages."
+msgstr ""
+
+#: includes/Options/Settings.php:553
+msgid "Primary Brand Color"
+msgstr ""
+
+#: includes/Options/Settings.php:563
+msgid "Session Timeout (minutes)"
+msgstr ""
+
+#: includes/Options/Settings.php:564
+msgid "Auto-logout users after this period of inactivity."
+msgstr ""
+
+#: includes/Options/Settings.php:575
+msgid "File Management"
+msgstr ""
+
+#: includes/Options/Settings.php:584
+msgid "Custom Logo Upload"
+msgstr ""
+
+#: includes/Options/Settings.php:585
+msgid "Click to upload or drag and drop. PNG, JPG, or SVG up to 5 MB."
+msgstr ""
+
+#: includes/Options/Settings.php:596
+msgid "Import Configuration File"
+msgstr ""
+
+#: includes/Options/Settings.php:597
+msgid "Upload a JSON or YAML configuration export."
+msgstr ""
+
+#: includes/Options/Settings.php:599
+msgid "Select Configuration File"
+msgstr ""
+
+#: includes/Options/Settings.php:600
+msgid "Use this configuration"
+msgstr ""
+
+#: includes/Options/Settings.php:615
+msgid "Content Blocks"
+msgstr ""
+
+#: includes/Options/Settings.php:616
+msgid "Rich-text content emitted by your plugin templates."
+msgstr ""
+
+#: includes/Options/Settings.php:626
+msgid "Heads up"
+msgstr ""
+
+#: includes/Options/Settings.php:627
+msgid "These blocks are rendered inside your plugin templates. Use the campaign end date below to auto-expire the welcome message."
+msgstr ""
+
+#: includes/Options/Settings.php:636
+msgid "Layout style"
+msgstr ""
+
+#: includes/Options/Settings.php:640
+msgid "List"
+msgstr ""
+
+#: includes/Options/Settings.php:644
+msgid "Card"
+msgstr ""
+
+#: includes/Options/Settings.php:648
+msgid "Banner"
+msgstr ""
+
+#: includes/Options/Settings.php:660
+msgid "Campaign end date"
+msgstr ""
+
+#: includes/Options/Settings.php:661
+msgid "Welcome message hides itself after this date."
+msgstr ""
+
+#: includes/Options/Settings.php:671
+msgid "Welcome Message Body"
+msgstr ""
+
+#: includes/Options/Settings.php:672
+msgid "Rendered on the dashboard widget. Supports the standard post HTML."
+msgstr ""
+
+#: includes/Options/Settings.php:688
+msgid "Integration Keys"
+msgstr ""
+
+#: includes/Options/Settings.php:689
+msgid "Credentials for third-party services. Stored in plain text — use environment variables in production."
+msgstr ""
+
+#: includes/Options/Settings.php:698
+msgid "Analytics API Key"
+msgstr ""
+
+#: includes/Options/Settings.php:709
+msgid "Webhook Signing Secret"
+msgstr ""
+
+#: includes/Options/Settings.php:725
+msgid "Custom CSS"
+msgstr ""
+
+#: includes/Options/Settings.php:726
+msgid "Stylesheet appended to every admin page. Be specific with selectors."
+msgstr ""
+
+#: includes/Options/Settings.php:734
+msgid "Stylesheet"
+msgstr ""
+
+#: includes/Options/Settings.php:744
+msgid "Custom JavaScript"
+msgstr ""
+
+#: includes/Options/Settings.php:745
+msgid "Inline script enqueued in the admin footer. Wrap in IIFE to avoid leaking globals."
+msgstr ""
+
+#: includes/Options/Settings.php:753
+msgid "Script"
+msgstr ""
+
+#: includes/Options/Settings.php:770
+msgid "Theme"
+msgstr ""
+
+#: includes/Options/Settings.php:771
+msgid "Navigation"
+msgstr ""
+
+#: includes/Options/Settings.php:778
+#: includes/Options/Settings.php:900
+msgid "Labs"
+msgstr ""
+
+#: includes/Options/Settings.php:793
+msgid "Typography"
+msgstr ""
+
+#: includes/Options/Settings.php:794
+msgid "Composite control — family, size, weight, and line-height in one go."
+msgstr ""
+
+#: includes/Options/Settings.php:803
+msgid "Heading style"
+msgstr ""
+
+#: includes/Options/Settings.php:813
+msgid "Enable experimental theme features"
+msgstr ""
+
+#: includes/Options/Settings.php:814
+msgid "Reveals the \"Experimental\" section below and an extra \"Labs\" tab — demonstrates conditional sections and tabs."
+msgstr ""
+
+#: includes/Options/Settings.php:822
+msgid "Spacing"
+msgstr ""
+
+#: includes/Options/Settings.php:823
+msgid "Box model spacing with optional uniform mode — click the link icon to sync all four sides."
+msgstr ""
+
+#: includes/Options/Settings.php:832
+msgid "Card padding"
+msgstr ""
+
+#: includes/Options/Settings.php:845
+msgid "Show advanced spacing"
+msgstr ""
+
+#: includes/Options/Settings.php:846
+msgid "Reveals an extra margin control — demonstrates conditional fields."
+msgstr ""
+
+#: includes/Options/Settings.php:856
+msgid "Card margin"
+msgstr ""
+
+#: includes/Options/Settings.php:857
+msgid "Visible only when the toggle above is on."
+msgstr ""
+
+#: includes/Options/Settings.php:871
+msgid "Experimental"
+msgstr ""
+
+#: includes/Options/Settings.php:872
+msgid "Visible only while \"experimental theme features\" is enabled."
+msgstr ""
+
+#: includes/Options/Settings.php:887
+msgid "Accent intensity"
+msgstr ""
+
+#: includes/Options/Settings.php:901
+msgid "Bleeding-edge options. The entire tab is gated on the experimental toggle."
+msgstr ""
+
+#: includes/Options/Settings.php:909
+msgid "Layout engine"
+msgstr ""
+
+#: includes/Options/Settings.php:912
+msgid "Flexbox"
+msgstr ""
+
+#: includes/Options/Settings.php:913
+msgid "CSS Grid"
+msgstr ""
+
+#: includes/Options/Settings.php:921
+msgid "Navigation Links"
+msgstr ""
+
+#: includes/Options/Settings.php:922
+msgid "Repeater — add as many rows as needed; each is a self-contained group of sub-fields."
+msgstr ""
+
+#: includes/Options/Settings.php:930
+msgid "Menu links"
+msgstr ""
+
+#: includes/Options/Settings.php:931
+msgid "Link"
+msgstr ""
+
+#: includes/Options/Settings.php:932
+msgid "Add link"
+msgstr ""
+
+#: includes/Options/Settings.php:940
+msgid "Label"
+msgstr ""
+
+#: includes/Options/Settings.php:947
+msgid "URL"
+msgstr ""
+
+#: includes/Options/Settings.php:953
+msgid "Open in"
+msgstr ""
+
+#: includes/Options/Settings.php:956
+msgid "Same tab"
+msgstr ""
+
+#: includes/Options/Settings.php:957
+msgid "New tab"
+msgstr ""
+
+#: includes/Options/Settings.php:975
+msgid "Overview"
+msgstr ""
+
+#: includes/Options/Settings.php:979
+msgid "Lab Settings"
+msgstr ""
+
+#: includes/Options/Settings.php:980
+msgid "This whole sidebar group only appears while experimental theme features are enabled."
+msgstr ""
+
+#: includes/Options/Settings.php:988
+msgid "Share anonymous lab telemetry"
+msgstr ""
+
+#: includes/Options/Settings.php:989
+msgid "Help us tune experimental features by sending anonymous usage data."
+msgstr ""
