@@ -15,15 +15,17 @@
 get_header(); ?>
 
 		<div id="primary">
-			<div class="custom-sidebar-nav">
-				<?php
-				wp_nav_menu( array(
-					'menu'            => 'sidebar', // Tên menu bạn đặt
-					'container'       => 'div',
-					'container_class' => 'sidebar-menu-wrapper', // Class để bạn CSS
-					'menu_class'      => 'sidebar-list', // Class cho thẻ <ul>
-				) );
-				?>
+			<div class="sidebar-left-custom">
+				<div class="custom-sidebar-nav">
+					<?php
+					wp_nav_menu( array(
+						'menu'            => 'sidebar', // Tên menu bạn đặt
+						'container'       => 'div',
+						'container_class' => 'sidebar-menu-wrapper', // Class để bạn CSS
+						'menu_class'      => 'sidebar-list', // Class cho thẻ <ul>
+					) );
+					?>
+				</div>
 			</div>
 			<div id="content" role="main">
 
@@ -33,6 +35,13 @@ get_header(); ?>
 					?>
 
 					<?php get_template_part( 'content', 'page' ); ?>
+
+					<?php
+					// Render flexible homepage modules attached to this page (if any)
+					if ( function_exists( 'render_homepage_modules_from_acf' ) ) {
+						render_homepage_modules_from_acf();
+					}
+					?>
 
 					<?php comments_template( '', true ); ?>
 

@@ -3,69 +3,6 @@
   "title": "Văn bản - Fields",
   "fields": [
     {
-      "key": "field_van_ban_number",
-      "label": "Số ký hiệu",
-      "name": "van_ban_number",
-      "type": "text"
-    },
-    {
-      "key": "field_van_ban_date",
-      "label": "Ngày ban hành",
-      "name": "van_ban_date",
-      "type": "date_picker",
-      "display_format": "d/m/Y",
-      "return_format": "Y-m-d"
-    },
-    {
-      "key": "field_van_ban_effective_date",
-      "label": "Ngày hiệu lực",
-      "name": "van_ban_effective_date",
-      "type": "date_picker",
-      "display_format": "d/m/Y",
-      "return_format": "Y-m-d"
-    },
-    {
-      "key": "field_van_ban_summary",
-      "label": "Trích yếu nội dung",
-      "name": "van_ban_summary",
-      "type": "textarea"
-    },
-    {
-      "key": "field_van_ban_type",
-      "label": "Hình thức văn bản",
-      "name": "van_ban_type",
-      "type": "select",
-      "choices": {
-        "Báo cáo": "Báo cáo",
-        "Quyết định": "Quyết định",
-        "Thông báo": "Thông báo",
-        "Công văn": "Công văn",
-        "Báo cáo tổng hợp": "Báo cáo tổng hợp"
-      },
-      "allow_null": 1,
-      "ui": 1
-    },
-    {
-      "key": "field_van_ban_field",
-      "label": "Lĩnh vực",
-      "name": "van_ban_field",
-      "type": "select",
-      "choices": {
-        "Giáo dục và đào tạo": "Giáo dục và đào tạo",
-        "Y tế": "Y tế",
-        "Kinh tế": "Kinh tế",
-        "An ninh": "An ninh"
-      },
-      "allow_null": 1,
-      "ui": 1
-    },
-    {
-      "key": "field_van_ban_signer",
-      "label": "Người ký duyệt",
-      "name": "van_ban_signer",
-      "type": "text"
-    },
-    {
       "key": "field_van_ban_file",
       "label": "Tài liệu đính kèm",
       "name": "van_ban_file",

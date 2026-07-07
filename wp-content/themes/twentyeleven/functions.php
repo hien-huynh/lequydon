@@ -305,6 +305,8 @@ endif; // twentyeleven_setup()
 function twentyeleven_scripts_styles() {
 	// Theme block stylesheet.
 	wp_enqueue_style( 'twentyeleven-block-style', get_template_directory_uri() . '/blocks.css', array(), '20240703' );
+	// Small initializer for ACF modules (list/slider) to avoid duplicate JS
+	wp_enqueue_script( 'twentyeleven-modules', get_template_directory_uri() . '/js/modules-init.js', array( 'jquery' ), '1.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'twentyeleven_scripts_styles' );
 
@@ -1087,6 +1089,130 @@ foreach (glob(get_template_directory() . '/post-type/*.php') as $filename) {
 // Tự động nạp file index.php trong từng thư mục con của /modules/
 foreach (glob(get_template_directory() . '/modules/*/index.php') as $filename) {
     require_once $filename;
+}
+
+function render_homepage_modules_from_acf( $post_id = null ) {
+	if ( ! function_exists( 'have_rows' ) ) {
+		return;
+	}
+
+	$rows_exist = $post_id ? have_rows( 'homepage_modules', $post_id ) : have_rows( 'homepage_modules' );
+	if ( ! $rows_exist ) {
+		return;
+	}
+
+	$layout_to_folder = array(
+		'list'    => 'list',
+		'list_v2' => 'list-v2',
+		'list_v3' => 'list-v3',
+		'slider'  => 'slider',
+	);
+
+	if ( $post_id ) {
+		while ( have_rows( 'homepage_modules', $post_id ) ) : the_row();
+			$layout = get_row_layout();
+			$module_folder = isset( $layout_to_folder[ $layout ] ) ? $layout_to_folder[ $layout ] : $layout;
+			$module_path = get_template_directory() . '/modules/' . $module_folder . '/index.php';
+			if ( file_exists( $module_path ) ) {
+				include_once $module_path;
+				switch ( $layout ) {
+					case 'list':
+						$args = array(
+							'list_post_type_select' => get_sub_field( 'list_post_type_select' ),
+							'list_posts_per_page'   => get_sub_field( 'list_posts_per_page' ),
+							'list_link'             => get_sub_field( 'list_link' ),
+							'list_sidebar_title'    => get_sub_field( 'list_sidebar_title' ),
+						);
+						if ( function_exists( 'render_list_module' ) ) echo render_list_module( $args );
+						break;
+					case 'list_v2':
+						$args = array(
+							'list_v2_post_type_select' => get_sub_field( 'list_v2_post_type_select' ),
+							'list_v2_posts_per_page'   => get_sub_field( 'list_v2_posts_per_page' ),
+							'list_v2_link'             => get_sub_field( 'list_v2_link' ),
+							'list_v2_sidebar_title'    => get_sub_field( 'list_v2_sidebar_title' ),
+						);
+						if ( function_exists( 'render_list_v2_module' ) ) echo render_list_v2_module( $args );
+						break;
+					case 'list_v3':
+						$args = array(
+							'list_v3_post_type_select' => get_sub_field( 'list_v3_post_type_select' ),
+							'list_v3_posts_per_page'   => get_sub_field( 'list_v3_posts_per_page' ),
+							'list_v3_link'             => get_sub_field( 'list_v3_link' ),
+							'list_v3_sidebar_title'    => get_sub_field( 'list_v3_sidebar_title' ),
+							'instance_id'              => uniqid( 'list_v3_' ),
+						);
+						if ( function_exists( 'render_list_v3_module' ) ) echo render_list_v3_module( $args );
+						break;
+					case 'slider':
+						$args = array(
+							'slider_post_type_select' => get_sub_field( 'slider_post_type_select' ),
+							'slider_posts_per_page'   => get_sub_field( 'slider_posts_per_page' ),
+						);
+						if ( function_exists( 'render_slider_module' ) ) echo render_slider_module( $args );
+						break;
+					default:
+						$shortcodes = array( 'list' => '[list]', 'list_v2' => '[list-v2]', 'list_v3' => '[list-v3]', 'slider' => '[slider]' );
+						if ( isset( $shortcodes[ $layout ] ) ) echo do_shortcode( $shortcodes[ $layout ] );
+				}
+			} else {
+				$shortcodes = array( 'list' => '[list]', 'list_v2' => '[list-v2]', 'list_v3' => '[list-v3]', 'slider' => '[slider]' );
+				if ( isset( $shortcodes[ $layout ] ) ) echo do_shortcode( $shortcodes[ $layout ] );
+			}
+		endwhile;
+	} else {
+		while ( have_rows( 'homepage_modules' ) ) : the_row();
+			$layout = get_row_layout();
+			$module_folder = isset( $layout_to_folder[ $layout ] ) ? $layout_to_folder[ $layout ] : $layout;
+			$module_path = get_template_directory() . '/modules/' . $module_folder . '/index.php';
+			if ( file_exists( $module_path ) ) {
+				include_once $module_path;
+				switch ( $layout ) {
+					case 'list':
+						$args = array(
+							'list_post_type_select' => get_sub_field( 'list_post_type_select' ),
+							'list_posts_per_page'   => get_sub_field( 'list_posts_per_page' ),
+							'list_link'             => get_sub_field( 'list_link' ),
+							'list_sidebar_title'    => get_sub_field( 'list_sidebar_title' ),
+						);
+						if ( function_exists( 'render_list_module' ) ) echo render_list_module( $args );
+						break;
+					case 'list_v2':
+						$args = array(
+							'list_v2_post_type_select' => get_sub_field( 'list_v2_post_type_select' ),
+							'list_v2_posts_per_page'   => get_sub_field( 'list_v2_posts_per_page' ),
+							'list_v2_link'             => get_sub_field( 'list_v2_link' ),
+							'list_v2_sidebar_title'    => get_sub_field( 'list_v2_sidebar_title' ),
+						);
+						if ( function_exists( 'render_list_v2_module' ) ) echo render_list_v2_module( $args );
+						break;
+					case 'list_v3':
+						$args = array(
+							'list_v3_post_type_select' => get_sub_field( 'list_v3_post_type_select' ),
+							'list_v3_posts_per_page'   => get_sub_field( 'list_v3_posts_per_page' ),
+							'list_v3_link'             => get_sub_field( 'list_v3_link' ),
+							'list_v3_sidebar_title'    => get_sub_field( 'list_v3_sidebar_title' ),
+							'instance_id'              => uniqid( 'list_v3_' ),
+						);
+						if ( function_exists( 'render_list_v3_module' ) ) echo render_list_v3_module( $args );
+						break;
+					case 'slider':
+						$args = array(
+							'slider_post_type_select' => get_sub_field( 'slider_post_type_select' ),
+							'slider_posts_per_page'   => get_sub_field( 'slider_posts_per_page' ),
+						);
+						if ( function_exists( 'render_slider_module' ) ) echo render_slider_module( $args );
+						break;
+					default:
+						$shortcodes = array( 'list' => '[list]', 'list_v2' => '[list-v2]', 'list_v3' => '[list-v3]', 'slider' => '[slider]' );
+						if ( isset( $shortcodes[ $layout ] ) ) echo do_shortcode( $shortcodes[ $layout ] );
+				}
+			} else {
+				$shortcodes = array( 'list' => '[list]', 'list_v2' => '[list-v2]', 'list_v3' => '[list-v3]', 'slider' => '[slider]' );
+				if ( isset( $shortcodes[ $layout ] ) ) echo do_shortcode( $shortcodes[ $layout ] );
+			}
+		endwhile;
+	}
 }
 
 

@@ -1,0 +1,171 @@
+{
+    "key": "group_homepage_modules",
+    "title": "Homepage Modules",
+    "fields": [
+        {
+            "key": "field_homepage_modules",
+            "label": "Modules",
+            "name": "homepage_modules",
+            "type": "flexible_content",
+            "layouts": [
+                {
+                    "key": "layout_list",
+                    "name": "list",
+                    "label": "List",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_list_post_type_select",
+                            "label": "Chọn Post Type",
+                            "name": "list_post_type_select",
+                            "type": "select",
+                            "multiple": 1,
+                            "ui": 1,
+                            "allow_null": 1,
+                            "choices": {}
+                        },
+                        {
+                            "key": "field_list_posts_per_page",
+                            "label": "Số lượng bài viết",
+                            "name": "list_posts_per_page",
+                            "type": "number",
+                            "default_value": 5
+                        },
+                        {
+                            "key": "field_list_link",
+                            "label": "Link tiêu đề",
+                            "name": "list_link",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_list_sidebar_title",
+                            "label": "Tiêu đề cột bên",
+                            "name": "list_sidebar_title",
+                            "type": "text",
+                            "default_value": "THÔNG TIN - THÔNG BÁO"
+                        }
+                    ]
+                },
+                {
+                    "key": "layout_list_v2",
+                    "name": "list_v2",
+                    "label": "List V2",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_list_v2_post_type_select",
+                            "label": "Chọn Post Type",
+                            "name": "list_v2_post_type_select",
+                            "type": "select",
+                            "multiple": 1,
+                            "ui": 1,
+                            "allow_null": 1,
+                            "choices": {}
+                        },
+                        {
+                            "key": "field_list_v2_posts_per_page",
+                            "label": "Số lượng bài viết",
+                            "name": "list_v2_posts_per_page",
+                            "type": "number",
+                            "default_value": 5
+                        },
+                        {
+                            "key": "field_list_v2_link",
+                            "label": "Link tiêu đề",
+                            "name": "list_v2_link",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_list_v2_sidebar_title",
+                            "label": "Tiêu đề cột bên",
+                            "name": "list_v2_sidebar_title",
+                            "type": "text",
+                            "default_value": "THÔNG TIN - THÔNG BÁO"
+                        }
+                    ]
+                },
+                {
+                    "key": "layout_list_v3",
+                    "name": "list_v3",
+                    "label": "List V3",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_list_v3_post_type_select",
+                            "label": "Chọn Post Type",
+                            "name": "list_v3_post_type_select",
+                            "type": "select",
+                            "multiple": 1,
+                            "ui": 1,
+                            "allow_null": 1,
+                            "choices": {}
+                        },
+                        {
+                            "key": "field_list_v3_posts_per_page",
+                            "label": "Số lượng bài viết",
+                            "name": "list_v3_posts_per_page",
+                            "type": "number",
+                            "default_value": 6
+                        },
+                        {
+                            "key": "field_list_v3_link",
+                            "label": "Link tiêu đề",
+                            "name": "list_v3_link",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_list_v3_sidebar_title",
+                            "label": "Tiêu đề cột bên",
+                            "name": "list_v3_sidebar_title",
+                            "type": "text",
+                            "default_value": "TIN TỨC"
+                        }
+                    ]
+                },
+                {
+                    "key": "layout_slider",
+                    "name": "slider",
+                    "label": "Slider",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_slider_post_type_select",
+                            "label": "Chọn Post Type",
+                            "name": "slider_post_type_select",
+                            "type": "select",
+                            "multiple": 1,
+                            "ui": 1,
+                            "allow_null": 1,
+                            "choices": {}
+                        },
+                        {
+                            "key": "field_slider_posts_per_page",
+                            "label": "Số lượng bài viết",
+                            "name": "slider_posts_per_page",
+                            "type": "number",
+                            "default_value": 5
+                        }
+                    ]
+                }
+            ],
+            "button_label": "Add Module"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "all"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Flexible content for homepage modules (list, list_v2, slider)"
+}

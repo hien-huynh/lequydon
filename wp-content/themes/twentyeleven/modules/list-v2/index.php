@@ -37,19 +37,33 @@ function render_list_v2_module( $args = array() ) {
         $sidebar_title = 'THÔNG TIN - THÔNG BÁO';
     }
 
+    $sidebar_link = '';
+    if ( ! empty( $args['list_v2_link'] ) ) {
+        $sidebar_link = trim( $args['list_v2_link'] );
+    } elseif ( function_exists( 'get_field' ) ) {
+        $sidebar_link = trim( get_field( 'list_v2_link' ) );
+    }
+
     $post_types = array();
     if ( ! empty( $args['list_v2_post_type_select'] ) ) {
         $post_types = (array) $args['list_v2_post_type_select'];
-    } elseif ( function_exists( 'get_field' ) ) {
-        $pt = get_field( 'list_v2_post_type_select' );
+    } elseif ( function_exists( 'get_sub_field' ) ) {
+        $pt = get_sub_field( 'list_v2_post_type_select' );
         if ( $pt ) {
             $post_types = (array) $pt;
         }
     }
+
+    if ( is_string( $post_types ) ) {
+        $post_types = array_filter( array_map( 'trim', explode( ',', $post_types ) ) );
+    }
+
     if ( ! empty( $post_types ) ) {
         $post_types = array_map( 'sanitize_key', $post_types );
         $post_types = array_filter( $post_types );
+        $post_types = array_filter( $post_types, 'post_type_exists' );
     }
+
     if ( empty( $post_types ) ) {
         $post_types = array( 'post' );
     }
@@ -79,29 +93,27 @@ function render_list_v2_module( $args = array() ) {
             $post_id = get_the_ID();
             $post_type = get_post_type( $post_id );
 
+            $summary = '';
+            if ( function_exists( 'get_field' ) ) {
+                $summary = get_field( 'description', $post_id );
+            }
+            if ( ! $summary ) {
+                $summary = get_the_excerpt();
+            }
+
+            // Normalize to plain text and trim to 34 words
+            $summary_text = wp_strip_all_tags( wp_kses_post( $summary ) );
+            $summary_trimmed = wp_trim_words( $summary_text, 34, '...' );
+
             $item = array(
                 'title' => get_the_title(),
                 'link'  => get_permalink(),
                 'post_type' => $post_type,
+                'date'  => get_the_date( 'd/m/Y', $post_id ),
+                'summary' => $summary_trimmed,
             );
 
             if ( 'van_ban' === $post_type ) {
-                // ACF fields for van_ban
-                $raw_date = function_exists( 'get_field' ) ? get_field( 'van_ban_date', $post_id ) : false;
-                if ( $raw_date ) {
-                    // expect Y-m-d, display d/m/Y
-                    $dt = DateTime::createFromFormat( 'Y-m-d', $raw_date );
-                    if ( $dt ) {
-                        $item['date'] = $dt->format( 'd/m/Y' );
-                    } else {
-                        $item['date'] = $raw_date;
-                    }
-                } else {
-                    $item['date'] = get_the_date( 'd/m/Y', $post_id );
-                }
-
-                $item['summary'] = function_exists( 'get_field' ) ? get_field( 'van_ban_summary', $post_id ) : '';
-
                 $file = function_exists( 'get_field' ) ? get_field( 'van_ban_file', $post_id ) : false;
                 $file_url = '';
                 if ( $file ) {
@@ -119,14 +131,24 @@ function render_list_v2_module( $args = array() ) {
         wp_reset_postdata();
     }
 
-    wp_enqueue_style( 'list-v2-css', get_template_directory_uri() . '/modules/list-v2/style.css' );
-
+    static $list_v2_style_printed = false;
+    $style_url = get_template_directory_uri() . '/modules/list-v2/style.css';
     ob_start();
+    if ( ! $list_v2_style_printed ) {
+        echo '<link rel="stylesheet" href="' . esc_url( $style_url ) . '" type="text/css" media="all" />';
+        $list_v2_style_printed = true;
+    }
     ?>
-    <div class="mod-thong-bao-sidebar list-v2 <?php if ( isset( $item['post_type'] ) && 'van_ban' === $item['post_type'] ) : ?> van-ban-list<?php endif; ?>">
+    <div class="mod-thong-bao-sidebar list-v2 <?php if ( isset( $item['post_type'] ) && 'van_ban' === $item['post_type'] ) : ?> van-ban-list<?php endif; ?>" data-module="list_v2">
         <div class="sidebar__widget">
             <div class="sidebar__title">
-                <h3 style="margin:0"><?php echo esc_html( $sidebar_title ); ?></h3>
+                <?php if ( $sidebar_link ) : ?>
+                    <a href="<?php echo esc_url( $sidebar_link ); ?>">
+                        <h3 style="margin:0"><?php echo esc_html( $sidebar_title ); ?></h3>
+                    </a>
+                <?php else : ?>
+                    <h3 style="margin:0"><?php echo esc_html( $sidebar_title ); ?></h3>
+                <?php endif; ?>
             </div>
             <?php if ( ! empty( $news ) ) : ?>
             <ul class="sidebar__content">

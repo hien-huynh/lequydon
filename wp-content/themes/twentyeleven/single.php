@@ -10,6 +10,18 @@
 get_header(); ?>
 
 		<div id="primary">
+			    <div class="sidebar-left-custom">
+        <div class="custom-sidebar-nav">
+            <?php
+            wp_nav_menu( array(
+                'menu'            => 'sidebar',
+                'container'       => 'div',
+                'container_class' => 'sidebar-menu-wrapper',
+                'menu_class'      => 'sidebar-list',
+                ) );
+                ?>
+        </div>
+    </div>
 			<div id="content" role="main">
 
 				<?php
@@ -17,13 +29,15 @@ get_header(); ?>
 					the_post();
 					?>
 
-					<nav id="nav-single">
-						<h3 class="assistive-text"><?php _e( 'Post navigation', 'twentyeleven' ); ?></h3>
-						<span class="nav-previous"><?php previous_post_link( '%link', __( '<span class="meta-nav">&larr;</span> Previous', 'twentyeleven' ) ); ?></span>
-						<span class="nav-next"><?php next_post_link( '%link', __( 'Next <span class="meta-nav">&rarr;</span>', 'twentyeleven' ) ); ?></span>
-					</nav><!-- #nav-single -->
 
 					<?php get_template_part( 'content-single', get_post_format() ); ?>
+
+					<?php
+					// Render flexible homepage modules attached to this post (if any)
+					if ( function_exists( 'render_homepage_modules_from_acf' ) ) {
+						render_homepage_modules_from_acf();
+					}
+					?>
 
 					<?php comments_template( '', true ); ?>
 

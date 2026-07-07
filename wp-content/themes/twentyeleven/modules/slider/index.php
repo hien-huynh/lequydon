@@ -22,41 +22,58 @@ function slider_module_populate_post_type_choices($field) {
 add_filter('acf/load_field/name=slider_post_type_select', 'slider_module_populate_post_type_choices');
 
 // Function xử lý hiển thị
-function render_slider_module($atts) {
-    // Đăng ký style cho module (chỉ load khi cần)
-    wp_enqueue_style('slider-css', get_template_directory_uri() . '/modules/slider/style.css');
-    wp_enqueue_script('slider-js', get_template_directory_uri() . '/modules/slider/script.js', array('jquery'), null, true);
+function render_slider_module($atts = array()) {
+    // Output module CSS and JS inline because module renders after wp_head
+    static $slider_assets_printed = false;
+    $style_url  = get_template_directory_uri() . '/modules/slider/style.css';
+    $script_url = get_template_directory_uri() . '/modules/slider/script.js';
+    ob_start();
+    if ( ! $slider_assets_printed ) {
+        echo '<link rel="stylesheet" href="' . esc_url( $style_url ) . '" type="text/css" media="all" />';
+        echo '<script src="' . esc_url( $script_url ) . '"></script>';
+        $slider_assets_printed = true;
+    }
 
-    $selected_post_types = get_field('slider_post_type_select');
-    $posts_per_page = absint(get_field('slider_posts_per_page'));
-    $sidebar_title = get_field('sidebar_title') ?: 'THÔNG TIN - THÔNG BÁO';
+    $selected_post_types = array();
+    if ( ! empty( $atts['slider_post_type_select'] ) ) {
+        $selected_post_types = (array) $atts['slider_post_type_select'];
+    } elseif ( function_exists( 'get_field' ) ) {
+        $selected_post_types = get_field( 'slider_post_type_select' );
+    }
 
-    if ($posts_per_page < 1) {
+    $posts_per_page = 0;
+    if ( ! empty( $atts['slider_posts_per_page'] ) ) {
+        $posts_per_page = intval( $atts['slider_posts_per_page'] );
+    } elseif ( function_exists( 'get_field' ) ) {
+        $posts_per_page = absint( get_field( 'slider_posts_per_page' ) );
+    }
+
+    if ( $posts_per_page < 1 ) {
         $posts_per_page = 5;
     }
 
-    if (empty($selected_post_types)) {
-        $selected_post_types = array('post');
+    if ( empty( $selected_post_types ) ) {
+        $selected_post_types = array( 'post' );
     }
 
-    if (! is_array($selected_post_types)) {
-        $selected_post_types = array($selected_post_types);
+    if ( ! is_array( $selected_post_types ) ) {
+        $selected_post_types = array( $selected_post_types );
     }
 
-    $selected_post_types = array_filter(array_map('sanitize_key', $selected_post_types));
+    $selected_post_types = array_filter( array_map( 'sanitize_key', $selected_post_types ) );
 
-    if (empty($selected_post_types)) {
-        $selected_post_types = array('post');
+    if ( empty( $selected_post_types ) ) {
+        $selected_post_types = array( 'post' );
     }
 
     $args = array(
-        'post_type' => $selected_post_types,
+        'post_type'      => $selected_post_types,
         'posts_per_page' => $posts_per_page,
-        'post_status' => 'publish',
-        'orderby' => 'date',
-        'order' => 'DESC',
+        'post_status'    => 'publish',
+        'orderby'        => 'date',
+        'order'          => 'DESC',
     );
-    $query = new WP_Query($args);
+    $query = new WP_Query( $args );
     $news = array();
 
     $default_image = '';
@@ -69,41 +86,43 @@ function render_slider_module($atts) {
         }
     }
 
-    if ($query->have_posts()) {
-        while ($query->have_posts()) {
+    if ( $query->have_posts() ) {
+        while ( $query->have_posts() ) {
             $query->the_post();
             $news[] = array(
                 'title' => get_the_title(),
                 'link'  => get_permalink(),
-                'image' => get_the_post_thumbnail_url(get_the_ID(), 'full') ? get_the_post_thumbnail_url(get_the_ID(), 'full') : esc_url($default_image),
+                'image' => get_the_post_thumbnail_url( get_the_ID(), 'full' ) ? get_the_post_thumbnail_url( get_the_ID(), 'full' ) : esc_url( $default_image ),
             );
         }
         wp_reset_postdata();
     }
+
+    $slider_uid = 'slider-' . uniqid();
     ob_start();
-    if (! empty($news)) : ?>
-        <div class="mod-thong-bao">
-            <div id="slidertbao" class="showcase-slider">
+    if ( ! empty( $news ) ) : ?>
+        <div class="mod-thong-bao" data-module="slider" data-slider-id="<?php echo esc_attr( $slider_uid ); ?>">
+            <div id="<?php echo esc_attr( $slider_uid ); ?>" class="showcase-slider" data-slider-id="<?php echo esc_attr( $slider_uid ); ?>">
                 <div class="showcase-slider__media">
-                    <?php foreach ($news as $index => $item) : ?>
-                        <div id="fragment-<?php echo esc_attr($index); ?>" class="ui-tabs-panel showcase-slider__panel <?php echo $index === 0 ? 'is-active' : ''; ?>" data-panel="<?php echo esc_attr($index); ?>">
-                            <a href="<?php echo esc_url($item['link']); ?>">
-                                <img src="<?php echo esc_url($item['image']); ?>" alt="<?php echo esc_attr($item['title']); ?>">
+                    <?php foreach ( $news as $index => $item ) : ?>
+                        <div id="<?php echo esc_attr( $slider_uid ) . '-fragment-' . esc_attr( $index ); ?>" class="ui-tabs-panel showcase-slider__panel <?php echo $index === 0 ? 'is-active' : ''; ?>" data-panel="<?php echo esc_attr( $index ); ?>">
+                            <a href="<?php echo esc_url( $item['link'] ); ?>">
+                                <img src="<?php echo esc_url( $item['image'] ); ?>" alt="<?php echo esc_attr( $item['title'] ); ?>">
                                 <div class="info">
-                                    <h2><?php echo esc_html($item['title']); ?></h2>
+                                    <h2><?php echo esc_html( $item['title'] ); ?></h2>
                                 </div>
                             </a>
                         </div>
                     <?php endforeach; ?>
                 </div>
                 <ul class="ui-tabs-nav showcase-slider__nav">
-                    <?php foreach ($news as $index => $item) : ?>
-                        <li class="showcase-slider__tab <?php echo $index == 0 ? 'ui-tabs-selected is-active' : ''; ?>" data-tab="<?php echo esc_attr($index); ?>">
-                            <a href="#fragment-<?php echo esc_attr($index); ?>">
-                                <div  class="showcase-slider__image">
-                                    <img class="showcase-slider__image-image" src="<?php echo esc_url($item['image']); ?>" alt="<?php echo esc_attr($item['title']); ?>">
+                    <?php foreach ( $news as $index => $item ) : ?>
+                        <li class="showcase-slider__tab <?php echo $index == 0 ? 'ui-tabs-selected is-active' : ''; ?>" data-tab="<?php echo esc_attr( $index ); ?>">
+                            <a href="#<?php echo esc_attr( $slider_uid ) . '-fragment-' . esc_attr( $index ); ?>">
+                                <div class="showcase-slider__image">
+                                    <img class="showcase-slider__image-image" src="<?php echo esc_url( $item['image'] ); ?>" alt="<?php echo esc_attr( $item['title'] ); ?>">
                                 </div>
-                                <div style="width: 193px; overflow: hidden;"><span><?php echo esc_html($item['title']); ?></span></div>
+                                <div style="width: 193px; overflow: hidden;"><span><?php echo esc_html( $item['title'] ); ?></span></div>
                             </a>
                         </li>
                     <?php endforeach; ?>

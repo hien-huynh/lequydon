@@ -1096,7 +1096,6 @@ article.format-status .entry-content {
 /* Singular content styles for Posts and Pages */
 .singular .hentry {
 	border-bottom: none;
-	padding: 1.875em 0 0;
 	position: relative;
 }
 .singular.page .hentry {

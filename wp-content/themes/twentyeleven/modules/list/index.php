@@ -34,7 +34,7 @@ add_filter( 'acf/load_field/name=list_post_type_select', 'list_module_populate_p
  * $args may include 'list_post_type_select' (array|string), 'list_posts_per_page' (int), 'list_sidebar_title' (string)
  */
 function render_list_module( $args = array() ) {
-    // Title
+    // Title and optional title link
     $sidebar_title = '';
     if ( ! empty( $args['list_sidebar_title'] ) ) {
         $sidebar_title = $args['list_sidebar_title'];
@@ -43,6 +43,13 @@ function render_list_module( $args = array() ) {
     }
     if ( ! $sidebar_title ) {
         $sidebar_title = 'THÔNG TIN - THÔNG BÁO';
+    }
+
+    $sidebar_link = '';
+    if ( ! empty( $args['list_link'] ) ) {
+        $sidebar_link = trim( $args['list_link'] );
+    } elseif ( function_exists( 'get_field' ) ) {
+        $sidebar_link = trim( get_field( 'list_link' ) );
     }
 
     // Determine post types
@@ -97,15 +104,25 @@ function render_list_module( $args = array() ) {
         wp_reset_postdata();
     }
 
-    // enqueue styles when rendering
-    wp_enqueue_style( 'list-css', get_template_directory_uri() . '/modules/list/style.css' );
-
+    // Output CSS link directly because module content renders after wp_head
+    static $list_style_printed = false;
+    $style_url = get_template_directory_uri() . '/modules/list/style.css';
     ob_start();
+    if ( ! $list_style_printed ) {
+        echo '<link rel="stylesheet" href="' . esc_url( $style_url ) . '" type="text/css" media="all" />';
+        $list_style_printed = true;
+    }
     ?>
-    <div class="mod-thong-bao-sidebar">
+    <div class="mod-thong-bao-sidebar" data-module="list">
         <div class="sidebar__widget">
             <div class="sidebar__title">
-                <h3 style="margin:0"><?php echo esc_html( $sidebar_title ); ?></h3>
+                <?php if ( $sidebar_link ) : ?>
+                    <a href="<?php echo esc_url( $sidebar_link ); ?>">
+                        <h3 style="margin:0"><?php echo esc_html( $sidebar_title ); ?></h3>
+                    </a>
+                <?php else : ?>
+                    <h3 style="margin:0"><?php echo esc_html( $sidebar_title ); ?></h3>
+                <?php endif; ?>
             </div>
             <?php if ( ! empty( $news ) ) : ?>
             <ul class="sidebar__content">

@@ -13,7 +13,7 @@ function register_van_ban_post_type() {
         'public'             => true,
         'has_archive'        => true,
         'menu_icon'          => 'dashicons-media-document',
-        'supports'           => array('title', 'thumbnail', 'custom-fields', 'revisions'),
+        'supports'           => array('title', 'thumbnail', 'editor', 'custom-fields', 'revisions'),
         'show_in_rest'       => true,
         'rewrite'            => array('slug' => 'van-ban', 'with_front' => false),
         'capability_type'    => 'post',

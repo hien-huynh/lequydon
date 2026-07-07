@@ -3,7 +3,7 @@
 
 .custom-sidebar-nav .sidebar-menu-wrapper { font-family: inherit; }
 .custom-sidebar-nav .sidebar-list {
-  width: full;
+  width: 100%;
   background: #2e8b3a;
   border-radius: 4px;
   list-style: none;
@@ -20,7 +20,6 @@
   padding: 10px 12px;
   text-decoration: none;
   font-weight: 600;
-  border-radius: 3px;
   background: linear-gradient(#38a64a, #2e8b3a);
 }
 
@@ -59,9 +58,9 @@
   left: 100%;
   top: 0;
   min-width: 220px;
-  background: #dff3ff;
+  background: #fff;
   border-radius: 3px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
   padding: 6px 0;
   z-index: 40;
   list-style: none;
@@ -88,7 +87,7 @@
   left: 100%;
   top: 0;
   background: #fff8f8;
-  border-left: 3px solid #e85a4f;
+  border-left: 3px solid #008709;
 }
 
 /* small visual tweaks */
@@ -109,4 +108,5 @@
 #primary:has(.custom-sidebar-nav) #content{
     width: 75%;
     margin-left: auto;
+    padding-left: 10px;
 }
