@@ -33,9 +33,6 @@ function render_list_v2_module( $args = array() ) {
     } elseif ( function_exists( 'get_field' ) ) {
         $sidebar_title = get_field( 'list_v2_sidebar_title' );
     }
-    if ( ! $sidebar_title ) {
-        $sidebar_title = 'THÔNG TIN - THÔNG BÁO';
-    }
 
     $sidebar_link = '';
     if ( ! empty( $args['list_v2_link'] ) ) {
@@ -141,6 +138,7 @@ function render_list_v2_module( $args = array() ) {
     ?>
     <div class="mod-thong-bao-sidebar list-v2 <?php if ( isset( $item['post_type'] ) && 'van_ban' === $item['post_type'] ) : ?> van-ban-list<?php endif; ?>" data-module="list_v2">
         <div class="sidebar__widget">
+            <?php if( ! empty( $sidebar_title ) ) : ?>
             <div class="sidebar__title">
                 <?php if ( $sidebar_link ) : ?>
                     <a href="<?php echo esc_url( $sidebar_link ); ?>">
@@ -150,6 +148,7 @@ function render_list_v2_module( $args = array() ) {
                     <h3 style="margin:0"><?php echo esc_html( $sidebar_title ); ?></h3>
                 <?php endif; ?>
             </div>
+            <?php endif; ?>
             <?php if ( ! empty( $news ) ) : ?>
             <ul class="sidebar__content">
                 <?php foreach ( $news as $item ) : ?>

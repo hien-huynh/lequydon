@@ -10,5 +10,7 @@
 .sidebar__download {
     color: red;
     text-decoration: underline;
+    display: flex;
+    align-items: center;
 }
 

@@ -5,7 +5,7 @@ function register_co_cau_to_chuc() {
     register_post_type('co_cau', array(
         'labels' => array(
             'name' => 'Cơ cấu tổ chức',
-            'singular_name' => 'Đơn vị',
+            'singular_name' => 'Cơ cấu tổ chức',
         ),
         'public' => true,
         'has_archive' => true,

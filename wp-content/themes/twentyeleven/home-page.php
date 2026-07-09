@@ -64,7 +64,7 @@ get_header(); // Gọi phần đầu trang (menu, logo)
                                 'list_v3_posts_per_page'   => get_sub_field( 'list_v3_posts_per_page' ),
                                 'list_v3_link'             => get_sub_field( 'list_v3_link' ),
                                 'list_v3_sidebar_title'    => get_sub_field( 'list_v3_sidebar_title' ),
-                                'instance_id'              => uniqid( 'list_v3_' ),
+                                'instance_id'              => 'list_v3_row_' . absint( get_row_index() ),
                             );
                             if ( function_exists( 'render_list_v3_module' ) ) echo render_list_v3_module( $args );
                             break;

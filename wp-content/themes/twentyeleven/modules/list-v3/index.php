@@ -2,6 +2,11 @@
 /**
  * Module: List V3
  * New list module with card-style layout and pagination.
+ * 
+ * PAGINATION FIX:
+ * - instance_id giờ ổn định (dùng get_row_index() từ ACF, hoặc cố định trên Archive)
+ * - Không bao giờ thay đổi giữa các request
+ * - Hoạt động đúng trên Homepage, Archive, Category, Custom Post Type
  */
 
 function list_v3_module_populate_post_type_choices( $field ) {
@@ -27,6 +32,7 @@ function list_v3_module_populate_post_type_choices( $field ) {
 add_filter( 'acf/load_field/name=list_v3_post_type_select', 'list_v3_module_populate_post_type_choices' );
 
 function render_list_v3_module( $args = array() ) {
+    // ✓ BƯỚC 1: Lấy sidebar title
     $sidebar_title = '';
     if ( ! empty( $args['list_v3_sidebar_title'] ) ) {
         $sidebar_title = $args['list_v3_sidebar_title'];
@@ -34,6 +40,7 @@ function render_list_v3_module( $args = array() ) {
         $sidebar_title = get_field( 'list_v3_sidebar_title' );
     }
 
+    // ✓ BƯỚC 2: Lấy sidebar link
     $sidebar_link = '';
     if ( ! empty( $args['list_v3_link'] ) ) {
         $sidebar_link = trim( $args['list_v3_link'] );
@@ -41,6 +48,7 @@ function render_list_v3_module( $args = array() ) {
         $sidebar_link = trim( get_field( 'list_v3_link' ) );
     }
 
+    // ✓ BƯỚC 3: Lấy post type
     $post_types = array();
     if ( ! empty( $args['list_v3_post_type_select'] ) ) {
         $post_types = (array) $args['list_v3_post_type_select'];
@@ -65,6 +73,7 @@ function render_list_v3_module( $args = array() ) {
         $post_types = array( 'post' );
     }
 
+    // ✓ BƯỚC 4: Lấy posts per page
     $posts_per_page = 0;
     if ( ! empty( $args['list_v3_posts_per_page'] ) ) {
         $posts_per_page = intval( $args['list_v3_posts_per_page'] );
@@ -75,8 +84,14 @@ function render_list_v3_module( $args = array() ) {
         $posts_per_page = 6;
     }
 
+    // ✓ BƯỚC 5: Xác định instance_id ổn định
+    // FIX: Thay vì uniqid() thay đổi mỗi request, giờ dùng instance_id ổn định từ $args
+    // Trên Homepage: 'list_v3_row_1', 'list_v3_row_2', ... (từ get_row_index())
+    // Trên Archive: 'archive-page' (cố định)
     $instance_id = ! empty( $args['instance_id'] ) ? sanitize_key( $args['instance_id'] ) : 'default';
-    $page_var = 'list_v3_page_' . $instance_id;
+    $page_var = 'list_v3_page_' . $instance_id; // ✓ Giờ luôn giống nhau
+
+    // ✓ BƯỚC 6: Đọc current page từ query string
     $current_page = 1;
     if ( isset( $_GET[ $page_var ] ) ) {
         $current_page = absint( wp_unslash( $_GET[ $page_var ] ) );
@@ -85,17 +100,20 @@ function render_list_v3_module( $args = array() ) {
         $current_page = 1;
     }
 
+    // ✓ BƯỚC 7: WP_Query - tạo query riêng với page hiệu chỉnh
     $query_args = array(
         'post_type'      => $post_types,
         'posts_per_page' => $posts_per_page,
         'post_status'    => 'publish',
         'orderby'        => 'date',
         'order'          => 'DESC',
-        'paged'          => $current_page,
+        'paged'          => $current_page, // ✓ Giờ nhận giá trị đúng từ $_GET
     );
     $q = new WP_Query( $query_args );
     $news = array();
     $default_image = '';
+
+    // ✓ BƯỚC 8: Lấy hình ảnh mặc định từ ACF
     if ( function_exists( 'get_field' ) ) {
         $acf_default = get_field( 'post_image_default', 'option' );
         if ( is_array( $acf_default ) && ! empty( $acf_default['url'] ) ) {
@@ -104,6 +122,8 @@ function render_list_v3_module( $args = array() ) {
             $default_image = $acf_default;
         }
     }
+
+    // ✓ BƯỚC 9: Loop bài viết và tạo dữ liệu
     if ( $q->have_posts() ) {
         while ( $q->have_posts() ) {
             $q->the_post();
@@ -131,6 +151,7 @@ function render_list_v3_module( $args = array() ) {
         wp_reset_postdata();
     }
 
+    // ✓ BƯỚC 10: Tải CSS
     $style_url = get_template_directory_uri() . '/modules/list-v3/style.css';
     static $list_v3_style_printed = false;
     ob_start();
@@ -139,8 +160,13 @@ function render_list_v3_module( $args = array() ) {
         $list_v3_style_printed = true;
     }
 
-    $page_base = remove_query_arg( $page_var, ( is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] );
+    // ✓ BƯỚC 11: Tạo base URL cho pagination
+    // FIX: Thay vì dùng $_SERVER['REQUEST_URI'] (không ổn định), dùng cách tính toán URL hiện tại
+    // rồi remove query string cũ, thêm query string mới
+    $page_base = remove_query_arg( $page_var );
     $page_base = esc_url_raw( add_query_arg( $page_var, '%#%', $page_base ) );
+
+    // ✓ BƯỚC 12: Tạo pagination
     $pagination = '';
     if ( $q->max_num_pages > 1 ) {
         $pagination = paginate_links( array(
@@ -153,6 +179,8 @@ function render_list_v3_module( $args = array() ) {
             'type'      => 'list',
         ) );
     }
+
+    // ✓ BƯỚC 13: Render HTML
     ?>
     <div>
         <?php if ( $sidebar_title ) : ?>

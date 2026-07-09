@@ -40,10 +40,10 @@ get_header(); ?>
 				</h1>
 			</header>
 			<?php
-			if ( function_exists( 'render_list_v3_module' ) ) {
-				echo render_list_v3_module( array(
-					'list_v3_post_type_select' => get_post_type(),
-					'list_v3_posts_per_page'   => get_option( 'posts_per_page' ),
+			if ( function_exists( 'render_list_v2_module' ) ) {
+				echo render_list_v2_module( array(
+					'list_v2_post_type_select' => get_post_type(),
+					'list_v2_posts_per_page'   => get_option( 'posts_per_page' ),
 					'instance_id'              => 'archive-page',
 				) );
 			} else {
