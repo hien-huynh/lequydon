@@ -48,7 +48,7 @@ get_header(); ?>
 
 						</header><!-- .entry-header -->
 
-						<div class="entry-content">
+						<div class="entry-content p-10">
 
 							<div class="entry-attachment">
 								<div class="attachment">

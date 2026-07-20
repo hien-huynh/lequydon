@@ -52,7 +52,7 @@ get_header(); ?>
 						<h1 class="entry-title"><?php _e( 'Nothing Found', 'twentyeleven' ); ?></h1>
 					</header><!-- .entry-header -->
 
-					<div class="entry-content">
+					<div class="entry-content p-10">
 						<p><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'twentyeleven' ); ?></p>
 						<?php get_search_form(); ?>
 					</div><!-- .entry-content -->

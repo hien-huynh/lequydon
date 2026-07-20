@@ -31,7 +31,7 @@
 			<?php the_excerpt(); ?>
 		</div><!-- .entry-summary -->
 		<?php else : ?>
-		<div class="entry-content">
+		<div class="entry-content p-10">
 			<div class="avatar">
 				<?php
 				/**

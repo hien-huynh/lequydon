@@ -25,7 +25,7 @@
 			<?php endif; ?>
 		</header><!-- .entry-header -->
 
-		<div class="entry-content">
+		<div class="entry-content p-10">
 			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentyeleven' ) ); ?>
 			<?php
 			wp_link_pages(

@@ -38,7 +38,7 @@ get_header(); ?>
 <div id="primary" class="">
 
 	<?php echo do_shortcode('[slider]'); ?>
-	<div id="content" class="entry-content" role="main">
+	<div id="content" class="entry-content p-10" role="main">
 		<?php
 		while (have_posts()) :
 			the_post();

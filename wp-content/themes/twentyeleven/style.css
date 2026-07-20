@@ -622,7 +622,8 @@ a.assistive-text:focus,
 #access .current_page_item > a,
 #access .current_page_ancestor > a {
 	font-weight: bold;
-	color: yellow;
+	color: yellow !important;
+    background: #2d7c35 !important;
 }
 
 /* Search Form */
@@ -2529,4 +2530,8 @@ h2 {
 }
 .sub-menu {
 	background: #fff;
+}
+
+body.custom-background {
+    margin-top: -32px;
 }
